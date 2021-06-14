@@ -20,7 +20,9 @@ def do_deploy(archive_path):
 
         put(archive_path, '/tmp/' + archiveName)
         run("mkdir -p /data/web_static/releases/" + archiveNameWOEx)
-        run("tar -xzvf /tmp/ " +  archiveName + " -C " + "/data/web_static/releases/" + archiveNameWOEx + " --strip-components=1")
+        run("tar -xzvf /tmp/" + archiveName + " -C " +
+            "/data/web_static/releases/" + archiveNameWOEx +
+            " --strip-components=1")
         run("rm -rf /tmp/" + archiveName)
         run("rm -rf /data/web_static/current")
         run("sudo ln -sf /data/web_static/releases/" +
@@ -30,12 +32,13 @@ def do_deploy(archive_path):
     except:
         return False
 
+
 def do_pack():
     """ pack up out web_static directory """
     try:
         now = datetime.now()
 
-        tarArchiveName = "web_static_"+ now.strftime("%Y%m%d%H%M%S") + ".tgz"
+        tarArchiveName = "web_static_" + now.strftime("%Y%m%d%H%M%S") + ".tgz"
         tarArchivePath = "versions/" + tarArchiveName
 
         local("mkdir -p versions")
