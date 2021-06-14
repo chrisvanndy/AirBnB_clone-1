@@ -19,11 +19,11 @@ def do_deploy(archive_path):
         archiveNameWOEx = archive_path[:-4]
 
         put(archive_path, '/tmp/' + archiveName)
-        run("mkdir -p /data/web_static/releases/" + archiveNameWOEx
-        run("tar -xzvf /tmp/ " +  archiveName + "-C" + "/data/web_static/releases/" archiveNameWOEx + " --strip-components=1")
-        run("rm -f /tmp/" + archiveName)
-        run("rm -f /data/web_static/current")
-        run("sudo ln -sf /data/web_static/releases/" + \
+        run("mkdir -p /data/web_static/releases/" + archiveNameWOEx)
+        run("tar -xzvf /tmp/ " +  archiveName + " -C " + "/data/web_static/releases/" + archiveNameWOEx + " --strip-components=1")
+        run("rm -rf /tmp/" + archiveName)
+        run("rm -rf /data/web_static/current")
+        run("sudo ln -sf /data/web_static/releases/" +
             archiveNameWOEx + " /data/web_static/current")
 
         return True
