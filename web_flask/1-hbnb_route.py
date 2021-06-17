@@ -22,4 +22,4 @@ def hello2():
     return 'HBNB'
 
 if __name__ == '__main__':
-    HBNB.run(debut=True, host='0.0.0.0', port=5000)
+    HBNB.run(debug=True, host='0.0.0.0', port=5000)
