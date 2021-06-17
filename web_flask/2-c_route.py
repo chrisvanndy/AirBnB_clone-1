@@ -25,7 +25,7 @@ def hello2():
 @HBNB.route('/c/<text>')
 def text_variable(text):
     # read instructions!!! use replace() built-in
-    return 'C %s' % text.replace("_"," ")
+    return 'C %s' % text.replace("_", " ")
 
 if __name__ == '__main__':
     HBNB.run(debug=True, host='0.0.0.0', port=5000)
