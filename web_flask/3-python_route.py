@@ -33,7 +33,7 @@ def text_variable(text):
 @HBNB.route('/python/')
 # ^^^ defines route if no text is supplied
 def text_variable2(text='is cool'):
-# defineing a default variable value for string above
+    # defineing a default variable value for string above
     return 'Python %s' % text.replace("_", " ")
 
 if __name__ == '__main__':
