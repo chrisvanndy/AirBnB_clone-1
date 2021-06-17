@@ -16,10 +16,10 @@ def hello():
     return 'Hello HBNB!'
 
 
-@HBNB.route('/hbnb'):
+@HBNB.route('/hbnb')
 def hello2():
-    """hell2 is route definition for '/hbnb'"""
+    """hello2 is route definition for '/hbnb'"""
     return 'HBNB'
 
 if __name__ == '__main__':
-    HBNB.run(host='0.0.0.0')
+    HBNB.run(debut=True, host='0.0.0.0', port=5000)
