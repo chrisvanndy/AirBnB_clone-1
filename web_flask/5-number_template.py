@@ -42,8 +42,8 @@ def number(n):
     return '%d is a number' % n
 
 
-@HBNB.route('/number_template/<n>')
-def is_number_template(n=None):
+@HBNB.route('/number_template/<int:n>')
+def is_number_template(n):
     return render_template('5-number.html', n=n)
 
 if __name__ == '__main__':
