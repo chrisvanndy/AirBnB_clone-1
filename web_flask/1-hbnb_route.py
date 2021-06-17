@@ -12,11 +12,13 @@ HBNB.url_map.strict_slashes = False
 
 @HBNB.route('/')
 def hello():
+    """hello is route definition for '/'"""
     return 'Hello HBNB!'
 
 
 @HBNB.route('/hbnb'):
 def hello2():
+    """hell2 is route definition for '/hbnb'"""
     return 'HBNB'
 
 if __name__ == '__main__':
