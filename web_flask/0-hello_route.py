@@ -9,6 +9,7 @@ from flask import Flask
 HBNB = Flask(__name__)
 HBNB.url_map.strict_slashes = False
 
+
 @HBNB.route('/')
 def hello():
     return 'Hello HBNB!'
