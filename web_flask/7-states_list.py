@@ -13,7 +13,7 @@ def dispalySates():
     state_dict = storage.all(State)
     # sort the dictionary by key/value pairs
     sorted_dict = sorted(state_dict.values(), key=lambda x: x.name)
-    return render_template('7-states_list.html', States=sorted_list)
+    return render_template('7-states_list.html', States=sorted_dict)
 
 if __name__ == '__main__':
     STATES.run(debug=True, host='0.0.0.0', port=5000)
