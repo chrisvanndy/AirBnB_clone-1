@@ -16,8 +16,9 @@ def dispalySates():
     return render_template('7-states_list.html', States=sorted_dict)
 
 @STATES.teardown_appcontext
-def tear_down():
-    storage.close()
+def tear_down(error):
+    if storage:
+        storage.close()
 
 if __name__ == '__main__':
     STATES.run(debug=True, host='0.0.0.0', port=5000)
