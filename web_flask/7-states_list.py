@@ -15,6 +15,7 @@ def dispalySates():
     sorted_dict = sorted(state_dict.values(), key=lambda x: x.name)
     return render_template('7-states_list.html', States=sorted_dict)
 
+
 @STATES.teardown_appcontext
 def tear_down(error):
     if storage:
