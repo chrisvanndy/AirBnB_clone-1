@@ -73,7 +73,7 @@ class DBStorage:
         from sqlalchemy.orm import sessionmaker, scoped_session
         from sqlalchemy.orm.session import Session
         Base.metadata.create_all(self.__engine)
-        sesh = sessionmaker(bind=self.__engine, expire_on_commit=False
+        sesh = sessionmaker(bind=self.__engine, expire_on_commit=False,
                             autocommit=False)
         Session = scoped_session(sesh)
         self.__session = Session()
