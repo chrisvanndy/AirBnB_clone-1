@@ -6,11 +6,10 @@ from flask import Flask, render_template
 STATES = Flask(__name__)
 STATES.url_map.strict_slashes = False
 
-ST = '7-states_list.html'
 
 @STATES.route('/states_list')
 def dispalySates()
-    return render_template(ST, State=storage.all(State)[name].sort())
+    return render_template('7-states_list.html', State=storage.all(State)[name].sort())
 
 if __name__ == '__main__':
     STATES.run(debug=True, host='0.0.0.0', port=5000)
