@@ -9,8 +9,10 @@ STATES.url_map.strict_slashes = False
 
 @STATES.route('/states_list')
 def dispalySates():
-    state_list = storage.all(State)
-    sorted_list = state_list.sorted()
+    # store all States in an object
+    state_dict = storage.all(State)
+    # sort the dictionary by key/value pairs
+    sorted_dict = sorted(state_dict.values(), key=lambda x: x.name)
     return render_template('7-states_list.html', States=sorted_list)
 
 if __name__ == '__main__':
