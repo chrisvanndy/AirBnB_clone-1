@@ -9,7 +9,9 @@ STATES.url_map.strict_slashes = False
 
 @STATES.route('/states_list')
 def dispalySates():
-    return render_template('7-states_list.html', State=storage.all(State)[name].sort())
+    state_list = storage.all(State)
+    sorted_list = state_list.sorted()
+    return render_template('7-states_list.html', States=sorted_list)
 
 if __name__ == '__main__':
     STATES.run(debug=True, host='0.0.0.0', port=5000)
