@@ -78,6 +78,6 @@ class DBStorage:
         Session = scoped_session(sesh)
         self.__session = Session()
 
-    def def close(self):
+    def close(self):
         """release connection/transactional resources of session"""
         self.__session.close()
