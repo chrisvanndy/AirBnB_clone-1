@@ -17,7 +17,7 @@ def cities_list():
     # repeat process for City
     city_dict = storage.all(City)
     sorted_city = sorted(city_dict.values(), key=lambda x: x.name)
-    return render_template('7-states_list.html', States=sorted_dict,
+    return render_template('8-cities_by_states.html', States=sorted_dict,
                            Cities=sorted_city)
 
 

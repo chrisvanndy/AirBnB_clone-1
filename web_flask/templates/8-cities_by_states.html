@@ -10,8 +10,10 @@
             <LI>"{{ state.id|e  }}: "<B>"{{ state.name|e }}"</B>
                 <UL>
                 {% for city in Cities %}
+                    {% if {{ city.id }} == {{ state.id }} %}    
                     <LI>"{{ city.id|e }}: " <B>"{{ city.name|e }}"</B></LI>
-                 {% endfor %} 
+                    {% endif %}
+                {% endfor %} 
                 </UL>
             </LI>
         {% endfor %}
