@@ -4,14 +4,13 @@
         <TITLE>HBNB</TITLE>
     </HEAD>
     <BODY>
-        <H1>States</H1>
-        <UL>
+
         {% for state in States %}
             <LI>"{{ state.id|e  }}: "<B>"{{ state.name|e }}"</B>
                 <UL>
                 {% for city in Cities %}
-                    {% if {{ city.id }} == {{ state.id }} %}    
-                    <LI>"{{ city.id|e }}: " <B>"{{ city.name|e }}"</B></LI>
+                    {% if city.state_id == state.id %}    
+                <LI>"{{ city.id|e }}: " <B>"{{ city.name|e }}"</B></LI>
                     {% endif %}
                 {% endfor %} 
                 </UL>
