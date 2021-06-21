@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<HTML lang="en">
+    <HEAD>
+        <TITLE>HBNB</TITLE>
+    </HEAD>
+    <BODY>
+        {% if signal == 2 %}
+        <H1>Not found!</H1>
+        {% elif signal == 1 %}
+        <H1>States</H1>
+        <UL>
+            {% for state in States %}
+                <LI>"{{ state.id|e }}: "<B>"{{ state.name|e }}"</B></LI>
+            {% endfor %}
+        </UL>
+        {% elif signal == 0 %}
+        <H1>State: {{ States.name|e }}</H1>
+        <H3>Cities:</H3>
+        <UL>
+            {% for city in Cities %}
+                {% if city.state_id == States.id %}    
+            <LI>"{{ city.id|e }}: " <B>"{{ city.name|e }}"</B></LI>
+                {% endif %}
+            {% endfor %}
+        </UL>
+        {% endif %}
+    </BODY>
+</HTML>
+
