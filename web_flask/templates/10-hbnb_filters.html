@@ -3,12 +3,12 @@
 	<head>
 		<title>AirBnB clone</title>
 
-		<link rel="shortcut icon" href="images/icon.ico" >
+		<link rel="shortcut icon" href="static/images/icon.png" >
 
-		<link rel="stylesheet" href="styles/4-common.css"/>
-		<link rel="stylesheet" href="styles/3-header.css"/>
-		<link rel="stylesheet" href="styles/3-footer.css"/>
-		<link rel="stylesheet" href="styles/6-filters.css"/>
+		<link rel="stylesheet" href="static/styles/4-common.css"/>
+		<link rel="stylesheet" href="static/styles/3-header.css"/>
+		<link rel="stylesheet" href="static/styles/3-footer.css"/>
+		<link rel="stylesheet" href="static/styles/6-filters.css"/>
 	</head>
     <body>
 		<header>
@@ -24,7 +24,9 @@
                                             <li><B>{{state.name|e }}</B>
                                                 <ul>
                                                     {% for city in Cities %}
+                                                    {% if city.state_id == state.id %}
                                                         <li><p>{{ city.name|e }}</p></li>
+                                                    {% endif %}
                                                     {% endfor %}
                                                 </ul>
                                             </li>
@@ -32,12 +34,12 @@
 					</ul>
 				</div>
 				<div class="amenities">
-					<h3>Amenities</h3>
-					<ul class="popover">
-                                            {% for items in amenities %}
-                                                <li><p>{{ items.name }}</p></li>
-                                            {% endfor %}
-					</ul>
+		                    <h3>Amenities</h3>
+				     <ul class="popover">
+                                        {% for items in Amenities %}
+                                            <li><p>{{ items.name }}</p></li>
+                                        {% endfor %}
+			             </ul>
 				</div>
 
 			</section>

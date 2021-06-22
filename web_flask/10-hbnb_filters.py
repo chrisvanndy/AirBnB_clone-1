@@ -20,8 +20,8 @@ def hbnb_filters():
     sorted_city = sorted(city_dict.values(), key=lambda x: x.name)
     amenity_dict = storage.all(Amenity)
     sorted_amenity = sorted(amenity_dict.values(), key=lambda x: x.name)
-    return render_template('8-cities_by_states.html', States=sorted_dict,
-                           Cities=sorted_city Amenities=sorted_amenity)
+    return render_template('10-hbnb_filters.html', States=sorted_dict,
+                           Cities=sorted_city, Amenities=sorted_amenity)
 
 
 @STATES.teardown_appcontext
